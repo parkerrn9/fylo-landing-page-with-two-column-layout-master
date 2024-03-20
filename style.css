@@ -29,11 +29,11 @@
 }
 
 body { 
+    
     background-color: white;
     font-size: 1rem;
-    /* margin: 0 0.9em 0; */
     width: 350px;
-    max-width: 400px;
+    max-width: 100%;
     
     /* font-family: "Open Sans", sans-serif; */
     /* font-family: "Raleway", sans-serif; */
@@ -268,21 +268,24 @@ footer > img{
 
 @media all and (min-width: 560px) {
     body {
+        width: 100%;
+        /* background-color: red; */
         display: grid;
         grid-template-areas:
         "hd hd hd hd hd"
         "mn mn mn mn mn"
         "ft ft ft ft ft";
         gap: 0.5em;
-        grid-template-rows: 200px auto 200px;
-        /* grid-auto-columns: auto; */
+        grid-template-columns: repeat(5, 1fr) ;
+        /* grid-template-rows: 200px auto 200px; */
+        grid-auto-columns: 600px;
     }
     header {
         grid-area: hd;
     }
     main {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        /* grid-template-columns: 2fr 1fr; */
         grid-gap: 1em;
         grid-auto-rows: minmax(20px, auto);
         grid-column: 1/ span 2;
@@ -293,7 +296,6 @@ footer > img{
         grid-area: ft;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        /* grid-auto-columns: auto; */
         grid-auto-flow: column; 
         gap: 1em 2em;
         justify-content: space-between;
@@ -301,12 +303,30 @@ footer > img{
 
     }
 
-    /* input, button {
+    input, button {
         display: inline-block;
-        width: 23em;
-        padding: 1em;
-        border-radius: 0.3em;
-    } */
+        text-align: left;
+    }
+    
+    section h2, section p, section h3{
+        text-align: left;
+        color: peru;
+        margin: 2em auto 1em;
+      }
+
+    .section-2 a {
+        text-align: left;
+    }
+    .section-3 h3, .section-3 p{
+        text-align: left;
+      }
+
+      div.testimonial {
+        width: 90%;
+        margin: 1em 0 4em;
+        font-size: 1em;
+      }
+
     .section-1 {
         grid-column: 1;
         grid-row: 1;
@@ -328,13 +348,14 @@ footer > img{
         background-color: var(--Light-Grayish-Blue);
     }
     .section-2 .sub-header {
-        /* text-align: center;
-        margin: 3em auto 1em; */
+        text-align: left;
+        /* margin: 3em auto 1em; */
         /* font-size: 1.41rem; */
         font-size: 24px;
     }
     .section-3 {
         grid-column: 1/ span 2;
+        padding: 0;
     }
 
     footer > img {
