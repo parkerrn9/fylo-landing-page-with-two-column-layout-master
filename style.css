@@ -18,7 +18,7 @@
 
 /* Typography */
 
---p-fs: 16px;
+--p-fs: 1rem;
 
 }
 
@@ -31,53 +31,57 @@
 body { 
     
     background-color: white;
-    font-size: 1rem;
-    width: 350px;
+    font-size: 16px;
+    min-width: 350px;
     max-width: 100%;
-    
-    /* font-family: "Open Sans", sans-serif; */
+    font-family: "Open Sans", sans-serif;
     /* font-family: "Raleway", sans-serif; */
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-main {
-    /* max-width: 50em;
-    width: 375px; */
+    display: grid;
+    place-content: center;
+   
 }
 
 .top-nav {
-    margin-top: 1.4em;
+    font-family: "Raleway", sans-serif;
     margin-bottom: 6em;
-    /* border: 2px solid red; */
+    font-size: 5px;
+    padding: 5em 5em 0;
 }
 
-.top-nav img {
-    width: 80px;
-    margin-right: 1.6em;
+.top-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
 }
 
-.top-nav-2nd {
-    margin-left: 1.8em;
-}
-
-.top-nav li, li{
-    /* display: inline; */
+ul {
     list-style-type: none;
 }
 
-.top-nav li:nth-child(n + 1) {
-    color: red;
-    display: inline-block;
-    vertical-align: text-top;
-    text-align:right;
-    margin-left: 0.7em;
-    font-size: 0.85rem;
+.top-nav img {
+    width: 113px;
+    height: auto;
+    /* background-color: var(--Very-Dark-Blue);  */
 }
 
+.top-nav li:nth-child(n + 1) {
+    color: var(--Desaturated-Blue);
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.top-nav-2nd li{
+    margin-left: 0.7em;
+}
+
+.top-nav, h2, h3 {
+    font-family: "Raleway", sans-serif;
+}
 
 section h2 {
     text-align: center;
-    color: red;
+    color: var(--Very-Dark-Blue);
     margin: 2em auto 1em;
 
 }
@@ -87,9 +91,9 @@ section p {
     margin: 1em 0.2em;
 }
 
-
 input, button {
     display: block;
+    max-width: 25em;
     width: 23em;
     padding: 1em;
     border-radius: 0.3em;
@@ -113,17 +117,30 @@ button {
 }
 
 /* centering the illustrator images.. */
-/* .section-2 .illustration-2, .section-1 .illustration-1 */
 .illustration-2, .illustration-1 {
     display: block;
     margin-inline: auto;
     width: 300px;
     height: auto;
+    padding-top: 5em;
+}
+
+/* .illustration-2-container {
+    width: 100%;
+    background-color: var(--Light-Grayish-Blue);
+} */
+
+.illustration-2 {
+    background-color: var(--Light-Grayish-Blue);
+    /* background-size: 100%; */
+    width: 100%;
 }
 
 .section-2 {
     background-color: var(--Light-Grayish-Blue);
-    /* border: 2px red solid; */
+    /* padding-bottom: 2em;
+    padding-top: 1em; */
+    padding: 2em 0 1em;
 }
 
 .section-2 .sub-header {
@@ -154,8 +171,26 @@ button {
     vertical-align: bottom;
 }
 
+    /* fonts adjustments */
+    .section-1 .main-header {
+        font-size: 1.7rem;
+    }
+    .section-2 .sub-header {
+        font-size: 1.32rem;
+    }
+    .section-2 a {
+        font-size: 1rem;
+    }
+    .section-3 h3 {
+        font-size:  1.32rem;
+    }
+    footer ul {
+        font-size: small;
+    }
+
 div.testimonial {
-    width: 90%;
+    max-width: 26em;
+    width: 23.5em;
     margin: 1em auto 4em;
     padding: 2em 1em 2em 1.8em;
     font-size: 0.9em;
@@ -167,6 +202,7 @@ div.testimonial {
 div.testimonial > p {
     text-align: left;
     padding-left: 0;
+    font-family: "Raleway", sans-serif;
 
 }
 
@@ -184,7 +220,7 @@ div.user-info  p{
     display: flex;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 div.user-info .user-title {
@@ -221,10 +257,10 @@ div.user-info > div {
     border: 0;
 }
 
-.section-3  input, .section-3  button {
+.section-3  input, .section-3  button,
+.section-1  input, .section-1  button {
     padding: 0.75em;
     border-radius: 0.1em;
-    border: 0;
 } 
 
 .section-3 button {
@@ -269,7 +305,6 @@ footer > img{
 @media all and (min-width: 560px) {
     body {
         width: 100%;
-        /* background-color: red; */
         display: grid;
         grid-template-areas:
         "hd hd hd hd hd"
@@ -277,17 +312,19 @@ footer > img{
         "ft ft ft ft ft";
         gap: 0.5em;
         grid-template-columns: repeat(5, 1fr) ;
-        /* grid-template-rows: 200px auto 200px; */
-        grid-auto-columns: 600px;
+        grid-template-rows: 110px auto 300px;
+        /* background-color: rebeccapurple; */
     }
     header {
         grid-area: hd;
+        border: red 1px solid;
     }
     main {
         display: grid;
-        /* grid-template-columns: 2fr 1fr; */
+        grid-template-columns: 1fr 1fr;
         grid-gap: 1em;
-        grid-auto-rows: minmax(20px, auto);
+        /* grid-auto-rows: minmax(20px, auto); */
+        /* grid-auto-rows: auto; */
         grid-column: 1/ span 2;
         grid-area: mn;
     }
@@ -303,9 +340,44 @@ footer > img{
 
     }
 
+    /* .top-nav-2nd {
+        grid-column: 5;
+      } */
+
+      .top-nav ul{
+        display: flex;
+        justify-content: space-between;
+      }
+
     input, button {
         display: inline-block;
         text-align: left;
+        margin-inline: auto;
+    }
+
+    .section-1 .form-input {
+        /* display: flex;*/
+        /* gap: 1.3em;  */
+    }
+
+    header, .section-1, .section-2, .section-3 {
+        padding-left: 1em;
+    }
+
+    .section-1 .form-input input{
+    margin: 0;
+    max-width: 26em;
+    border: 1px solid var(--Very-Dark-Blue);
+
+    /* padding: 0.5em 1em; */
+    /* flex: 110px 2 1; */
+    }
+
+    .section-1 .form-input button{
+        margin: 0;
+        text-align: center;
+        max-width: 12em;
+        /* flex: 80px 1 2; */
     }
     
     section h2, section p, section h3{
@@ -319,6 +391,7 @@ footer > img{
     }
     .section-3 h3, .section-3 p{
         text-align: left;
+        margin-bottom: 0px;
       }
 
       div.testimonial {
@@ -330,13 +403,15 @@ footer > img{
     .section-1 {
         grid-column: 1;
         grid-row: 1;
-        width: 400px;
+        width: 100%;
+        /* border: 1px red solid; */
     }
     .section-2 {
         grid-column: 1;
         grid-row: 2;
     }
     .illustration-1, .illustration-2 {
+        /* display: block; */
         width: 450px;
         height: auto;
     }
@@ -349,14 +424,46 @@ footer > img{
     }
     .section-2 .sub-header {
         text-align: left;
-        /* margin: 3em auto 1em; */
-        /* font-size: 1.41rem; */
         font-size: 24px;
     }
     .section-3 {
         grid-column: 1/ span 2;
-        padding: 0;
+        padding: 1em 3em;
+        display: flex;
+        justify-content: space-between;
+
+
     }
+    div.pre-footer {
+        grid-column: 1/ span 4;
+        border: 1px red solid;
+        max-width: 550px;
+    }
+    .section-3 div.form-input {
+        /* grid-column: 4/6; */
+        border: 1px yellow solid;
+        padding: 1.3em;
+        width: 28em;
+    }
+    .section-3 input {
+        /* color:red; */
+        /* max-width: 29em; */
+        width: inherit;
+    }
+    .section-3 button {
+        /* color:red; */
+        max-width: 180px;
+    }
+
+    .section-3 h3{
+        text-align: left;
+        font-size: 1.4rem;
+      }
+
+    .section-3 p{
+        text-align: left;
+        margin-top: 0.5em;
+      }
 
     footer > img {
         margin: 0;
