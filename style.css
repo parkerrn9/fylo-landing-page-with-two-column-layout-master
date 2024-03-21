@@ -61,7 +61,7 @@ ul {
 .top-nav img {
     width: 113px;
     height: auto;
-    /* background-color: var(--Very-Dark-Blue);  */
+    background-color: var(--Very-Dark-Blue); 
 }
 
 .top-nav li:nth-child(n + 1) {
@@ -317,16 +317,16 @@ footer > img{
     }
     header {
         grid-area: hd;
-        border: red 1px solid;
+        /* border: red 1px solid; */
+        background-color: #dad9d9;
     }
     main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1em;
-        /* grid-auto-rows: minmax(20px, auto); */
-        /* grid-auto-rows: auto; */
-        grid-column: 1/ span 2;
         grid-area: mn;
+    }
+
+    .main-flex {
+        display: flex;
+        flex-direction: column;
     }
 
     footer {
@@ -337,16 +337,21 @@ footer > img{
         gap: 1em 2em;
         justify-content: space-between;
         align-content: center;
-
+        padding-inline: 8em;
     }
-
-    /* .top-nav-2nd {
-        grid-column: 5;
-      } */
+        .top-nav {
+            padding: 5em 0;
+        }
 
       .top-nav ul{
         display: flex;
         justify-content: space-between;
+      }
+      .top-nav img {
+        background-color: transparent;
+      }
+      header {
+        margin-inline: 7em;
       }
 
     input, button {
@@ -355,12 +360,7 @@ footer > img{
         margin-inline: auto;
     }
 
-    .section-1 .form-input {
-        /* display: flex;*/
-        /* gap: 1.3em;  */
-    }
-
-    header, .section-1, .section-2, .section-3 {
+    .section-1, .section-2, .section-3 {
         padding-left: 1em;
     }
 
@@ -368,16 +368,12 @@ footer > img{
     margin: 0;
     max-width: 26em;
     border: 1px solid var(--Very-Dark-Blue);
-
-    /* padding: 0.5em 1em; */
-    /* flex: 110px 2 1; */
     }
 
     .section-1 .form-input button{
         margin: 0;
         text-align: center;
         max-width: 12em;
-        /* flex: 80px 1 2; */
     }
     
     section h2, section p, section h3{
@@ -388,6 +384,8 @@ footer > img{
 
     .section-2 a {
         text-align: left;
+        margin-top: 2em;
+        margin-bottom: 3em;
     }
     .section-3 h3, .section-3 p{
         text-align: left;
@@ -404,60 +402,79 @@ footer > img{
         grid-column: 1;
         grid-row: 1;
         width: 100%;
-        /* border: 1px red solid; */
+        display: flex;
     }
+    .section-1 div:first-child {
+        padding-inline: 6em;
+        padding-right: 13em;
+    }
+    .section-2 div:first-child {
+        padding-inline: 6em;
+        padding-right: 13em;
+      }
+      .section-1 .main-header {
+        line-height: 1.65;
+        font-size: 2rem;
+      }
+      .section-1 .main-header-text {
+        line-height: 1.6;
+      }
+    
     .section-2 {
         grid-column: 1;
         grid-row: 2;
+        display: flex;
     }
     .illustration-1, .illustration-2 {
-        /* display: block; */
         width: 450px;
         height: auto;
     }
     .illustration-1 {
         align-self: center;    
+        margin-right: 12em; 
     }
     .illustration-2 {
         align-self: center;
         background-color: var(--Light-Grayish-Blue);
+        margin-right: 12em;
     }
     .section-2 .sub-header {
         text-align: left;
-        font-size: 24px;
+        font-size: 2rem;
+    }
+    .sub-header-text p{
+        margin-bottom: 0;
+        line-height: 1.7;
+    }
+    .sub-header-text {
+        padding-right: 2em;
+        font-size: 1rem;
     }
     .section-3 {
         grid-column: 1/ span 2;
-        padding: 1em 3em;
+        padding: 1em 7em;
         display: flex;
         justify-content: space-between;
-
-
     }
     div.pre-footer {
         grid-column: 1/ span 4;
-        border: 1px red solid;
         max-width: 550px;
     }
     .section-3 div.form-input {
-        /* grid-column: 4/6; */
-        border: 1px yellow solid;
         padding: 1.3em;
         width: 28em;
     }
     .section-3 input {
-        /* color:red; */
-        /* max-width: 29em; */
+        max-width: 34em;
         width: inherit;
     }
     .section-3 button {
-        /* color:red; */
         max-width: 180px;
     }
 
     .section-3 h3{
         text-align: left;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
       }
 
     .section-3 p{
