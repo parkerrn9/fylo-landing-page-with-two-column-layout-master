@@ -17,7 +17,8 @@
 --Light-Gray: hsl(0, 0%, 75%);
 
 /* Typography */
-
+--Body-fm: "Open Sans", sans-serif;
+--Headings-fm: "Raleway", sans-serif;
 --p-fs: 1rem;
 
 }
@@ -35,7 +36,6 @@ body {
     min-width: 350px;
     max-width: 100%;
     font-family: "Open Sans", sans-serif;
-    /* font-family: "Raleway", sans-serif; */
     display: grid;
     place-content: center;
    
@@ -125,31 +125,25 @@ button {
     padding-top: 5em;
 }
 
-/* .illustration-2-container {
-    width: 100%;
-    background-color: var(--Light-Grayish-Blue);
-} */
-
 .illustration-2 {
     background-color: var(--Light-Grayish-Blue);
-    /* background-size: 100%; */
     width: 100%;
 }
 
 .section-2 {
     background-color: var(--Light-Grayish-Blue);
-    /* padding-bottom: 2em;
-    padding-top: 1em; */
     padding: 2em 0 1em;
 }
 
 .section-2 .sub-header {
     text-align: center;
     margin: 3em auto 1em;
+    color: var(--Very-Dark-Blue);
 }
 
  div.sub-header-text p {
     text-align: left;
+    color: var(--Very-Dark-Blue);
 }
 
 .section-2  a {
@@ -313,11 +307,9 @@ footer > img{
         gap: 0.5em;
         grid-template-columns: repeat(5, 1fr) ;
         grid-template-rows: 110px auto 300px;
-        /* background-color: rebeccapurple; */
     }
     header {
         grid-area: hd;
-        /* border: red 1px solid; */
         background-color: #dad9d9;
     }
     main {
@@ -378,7 +370,6 @@ footer > img{
     
     section h2, section p, section h3{
         text-align: left;
-        color: peru;
         margin: 2em auto 1em;
       }
 
